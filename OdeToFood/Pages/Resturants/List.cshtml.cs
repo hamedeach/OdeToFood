@@ -17,6 +17,9 @@ namespace OdeToFood.Pages.Resturants
 
         public string Message { set; get; }
         public IEnumerable<OdeToFood.Domain.Resturants> ResturantsList { get; set; }
+        [BindProperty(SupportsGet =true)]
+        public string SearchTxt { get; set; }
+
         /// <summary>
         /// constructor for page model
         /// </summary>
@@ -30,6 +33,11 @@ namespace OdeToFood.Pages.Resturants
             Message =config["SettingsMessage"];
             ResturantsList = resturants.GetAllResturants();
 
+        }
+        
+        public void GetByName()
+        {
+            ResturantsList = resturants.GetResturantByName(SearchTxt);
         }
 
 

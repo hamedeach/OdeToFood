@@ -9,6 +9,8 @@ namespace OdeToFood.Persistance
     public interface IResturantData
     {
         IEnumerable<Resturants> GetAllResturants();
+        IEnumerable<Resturants> GetResturantByName(string name);
+        Resturants GetResturantByID(int id);
     }
 
     public class InMemoryResturantData : IResturantData
@@ -26,10 +28,21 @@ namespace OdeToFood.Persistance
         }
         public IEnumerable<Resturants> GetAllResturants()
         {
-            //return resturantsList;
+            return resturantsList;
+            
+        }
+
+        public IEnumerable<Resturants> GetResturantByName(string name = null)
+        {
             return from r in resturantsList
+                   where string.IsNullOrEmpty(name)  || r.Name.StartsWith(name)
                    orderby r.Name
                    select r;
+        }
+
+        public Resturants GetResturantByID(int resturantId)
+        {
+            return resturantsList.SingleOrDefault(r => r.Id == resturantId);
         }
     }
 }

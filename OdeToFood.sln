@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdeToFood", "OdeToFood\OdeToFood.csproj", "{50645BAA-ACF6-4F24-95B6-DB1A6E69FBB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OdeToFood", "OdeToFood\OdeToFood.csproj", "{50645BAA-ACF6-4F24-95B6-DB1A6E69FBB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdeToFood.Domain", "OdeToFood.Domain\OdeToFood.Domain.csproj", "{02DD2AE9-3CD5-435E-A227-B6CA59D3CF16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OdeToFood.Domain", "OdeToFood.Domain\OdeToFood.Domain.csproj", "{02DD2AE9-3CD5-435E-A227-B6CA59D3CF16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdeToFood.Persistance", "OdeToFood.Persistance\OdeToFood.Persistance.csproj", "{847C35C0-3CB3-4221-99BA-D43A9FAC8590}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OdeToFood.Persistance", "OdeToFood.Persistance\OdeToFood.Persistance.csproj", "{847C35C0-3CB3-4221-99BA-D43A9FAC8590}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
