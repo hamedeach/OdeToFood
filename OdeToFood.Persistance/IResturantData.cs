@@ -11,6 +11,9 @@ namespace OdeToFood.Persistance
         IEnumerable<Resturants> GetAllResturants();
         IEnumerable<Resturants> GetResturantByName(string name);
         Resturants GetResturantByID(int id);
+        Resturants update(Resturants updatedresturant);
+        Resturants Add(Resturants newresturant);
+        int Commit();
     }
 
     public class InMemoryResturantData : IResturantData
@@ -44,5 +47,32 @@ namespace OdeToFood.Persistance
         {
             return resturantsList.SingleOrDefault(r => r.Id == resturantId);
         }
+
+        Resturants IResturantData.Add(Resturants newresturant)
+        {
+            resturantsList.Add(newresturant);
+            newresturant.Id = resturantsList.Max(r => r.Id) + 1;
+            return newresturant;
+        }
+        public Resturants update(Resturants updatedresturant)
+        {
+            // throw new NotImplementedException();
+            if (updatedresturant is null) return null;
+           var existResturant =  resturantsList.SingleOrDefault(r => r.Id == updatedresturant.Id);
+            if (existResturant is null) return null;
+
+            existResturant.Name = updatedresturant.Name;
+            existResturant.Location = updatedresturant.Location;
+            existResturant.Cusine = updatedresturant.Cusine;
+            return existResturant;
+        }
+
+        public int Commit()
+        {
+            return 0;
+            //throw new NotImplementedException();
+        }
+
+        
     }
 }

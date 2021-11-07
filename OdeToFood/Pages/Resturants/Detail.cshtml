@@ -3,6 +3,12 @@
 @model OdeToFood.Pages.Resturants.DetailModel
 @{
 }
+@if (Model.TempData["Message"] != null) 
+{
+    <div class="alert alert-info">
+        @Model.TempData["Message"]
+    </div>
+}
 <h1>@Model.MyResturant.Name</h1>
 <div> ID : @Model.MyResturant.Id</div>
 <div>Location : @Model.MyResturant.Location</div>

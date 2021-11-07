@@ -1,0 +1,25 @@
+﻿@page "{resturantId:int?}"
+@model OdeToFood.Pages.Resturants.EditModel
+@{
+}
+<h1>Editing @Model.ResturantDomain.Name</h1>
+<form method="post">
+    <input type="hidden" asp-for="ResturantDomain.Id" />
+    <div class="form-group">
+        <label asp-for="ResturantDomain.Name"></label>
+        <input asp-for="ResturantDomain.Name" class="form-control" />
+        <span class="text-danger" asp-validation-for="ResturantDomain.Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ResturantDomain.Location"></label>
+        <input asp-for="ResturantDomain.Location" class="form-control" />
+        <span class="text-danger" asp-validation-for="ResturantDomain.Location"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ResturantDomain.Cusine"></label>
+        <select class="form-control" asp-for="ResturantDomain.Cusine" asp-items="Model.CusinesList">
+            <
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
